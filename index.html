@@ -1,14 +1,19 @@
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-<!-- <script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script> -->
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
-<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-<!-- <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/AR.js/master/three.js/examples/vendor/three.js/build/three.min.js'</script> -->
 <!-- https://github.com/czkm/birthday_cake/blob/master/index.html -->
+<!-- https://github.com/Koshukey/happybirthday/blob/master/index.html -->
 <body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+  <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
+
+    <a-assets>
+      <a-asset-item id='cake' src='./resource/scene.gltf'></a-asset-item>
+    </a-assets>
+
     <a-marker type='pattern' url='./resource/pattern-marker.patt'>
       <a-entity position='-3 2 0' text="width: 5; value: wanwan，Happy birthday! I love you"></a-entity>
-      <a-entity position='0 0 0' gltf-model="url(./resource/scene.gltf)"></a-entity>
-    </a-marker>
+      <a-entity position='0 0 0' gltf-model='#cake'></a-entity>
+    </a-entity>
+
+    <a-entity camera></a-entity>
   </a-scene>
 </body>
