@@ -5,8 +5,8 @@
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
       <a-assets>
-        <!-- <a-asset-item id='cake' src='https://czkm.github.io/birthday_cake/res/duck/scene.gltf'></a-asset-item> -->
-        <a-asset-item id='cake' src='./resource/cake1/scene.gltf'></a-asset-item>
+        <a-asset-item id='cake1' src='https://czkm.github.io/birthday_cake/res/duck/scene.gltf'></a-asset-item>
+        <a-asset-item id='cake2' src='./resource/cake1/scene.gltf'></a-asset-item>
       </a-assets>
       <a-marker
         type='pattern'
@@ -26,9 +26,11 @@
           rotation="-90 0 0"
           color="red"
         ></a-text>
-        <a-entity position="0 0 0.2" rotation="-85 0 0" gltf-model="#cake" scale='0.05 0.05 0.05'>
+        <a-entity position="1 0 0.2" rotation="-55 0 0" gltf-model="#cake1" scale='0.03 0.03 0.03'></a-entity>
+        <a-entity position="-3 0 0.2" rotation="-85 0 0" gltf-model="#cake2" scale='0.04 0.04 0.04'></a-entity>
+        <a-entity position="4 0 0.2" rotation="-85 0 0" gltf-model="#cake3" scale='0.04 0.04 0.04'></a-entity>
       </a-marker>
-      <a-entity camera></a-entity>
+      <a-entity camera look-controls></a-entity>
     </a-scene>
   </body>
 </html>
